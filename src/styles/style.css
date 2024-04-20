@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --accent-color: #C8B6A6;
+    --foreground-color: #0F1419;
+    --background-color: white;
+    --gray-dark-color: #66757F;
+    --gray-light-color: #edeff1;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+  }
+  
+  .app-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .loading {
+    position: sticky;
+    top: 0;
+  }
+  
+  .login-page, .register-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+  }
+  
+  .login-page__hero, .register-page__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 160px;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+  }
+  
+  .login-page__main, .register-page__main {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 64px;
+  }
+  
+  .login-page__main h2, .register-page h2 {
+    font-weight: 300;
+    font-size: 48px;
+  }
+  
+  .login-input input, .register-input input {
+    display: block;
+    width: 100%;
+    padding: 12px 8px;
+    margin: 8px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--gray-dark-color);
+  }
+  
+  .login-input button, .register-input button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border: 0;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .home-page {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .navigation {
+    padding: 6px;
+    min-height: 55px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background-color: var(--gray-light-color);
+    border-radius: 5px;
+    padding: 0 12px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
+  .navigation-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .navigation-profile p{
+    color: var(--gray-dark-color);
+  }
+  
+  .navigation img {
+    width: 32px;
+    vertical-align: middle;
+    border-radius: 50%;
+  }
+  
+  .navigation nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .navigation nav a {
+    text-decoration: none;
+    color: var(--foreground-color);
+    font-weight: bold;
+  }
+  
+  .navigation button {
+    border: 0;
+    background-color: transparent;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .navlink:hover{
+    opacity: 80%;
+  }
+  
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 32px;
+  }
+  
+  .item {
+    padding: 16px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(243, 243, 243);
+    border-bottom: 0;
+  }
+  
+  .item:last-of-type {
+    border-bottom: 1px solid rgb(243, 243, 243);
+  }
+  
+  .item:hover {
+    background-color: var(--gray-light-color);
+  }
+  
+  .item__user-photo img {
+    width: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+  }
+  
+  .item__detail {
+    flex: 1;
+  }
+  
+  .item__detail header {
+    display: flex;
+    padding-bottom: 4px;
+    border-bottom: solid 1px var(--gray-light-color);
+  }
+  
+  .item__user-info {
+    flex: 1;
+  }
+  
+  .item__detail .item__created-at {
+    color: var(--gray-dark-color);
+    font-size: 15px;
+  }
+  
+  .item__detail .item__user-name {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .item__detail .item__user-id {
+    font-size: 15px;
+    color: var(--gray-dark-color);
+  }
+  
+  .item__detail .item__text {
+    font-size: 15px;
+  }
+  
+  .item__detail .item__votes {
+    margin-top: 12px;
+  }
+
+  .item__votes{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .item__votes div {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    gap: 8px;
+  }
+
+  .item__votes p{
+    display: flex;
+  }
+
+  .item__votes p button {
+    display: flex;
+    border: 0;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .thread-input, .thread-comment-input {
+    margin-bottom: 16px;
+  }
+
+  .thread-input input{
+    font-family: "Poppins", sans-serif;
+    margin: 5px 0;
+    background-color: transparent;
+    border: 1px solid var(--gray-light-color);
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .thread-input textarea, .thread-comment-input textarea {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    border-color: var(--gray-light-color);
+    padding: 8px;
+    width: 100%;
+    height: 150px;
+    resize: none;
+    font-size: 15px;
+  }
+  
+  .thread-input button, .thread-comment-input button {
+    background-color: var(--accent-color);
+    font-family: 'Open Sans', sans-serif;
+    color: var(--background-color);
+    font-weight: 600;
+    font-size: 15px;
+    border: 0;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .thread-input button:hover, .thread-comment-input button:hover{
+    opacity: 90%;
+  }
+  
+  .thread-input__char-left, .thread-comment-input__char-left {
+    font-size: 15px;
+    margin: 6px 0 8px 0;
+    color: var(--gray-dark-color);
+  }
+  
+  .detail-page {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .thread-detail {
+    margin-top: 32px;
+  }
+  
+  .thread-detail header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    border-bottom: solid 1px var(--gray-light-color);
+  }
+  
+  .thread-detail header img {
+    width: 80px;
+    border-radius: 50%;
+  }
+  
+  .thread-detail__user-info {
+    font-size: 20px;
+  }
+  
+  .thread-detail__user-name {
+    font-weight: 600;
+  }
+  
+  .thread-detail__text {
+    font-size: 20px;
+  }
+
+  .thread-detail__created-at{
+    color: var(--gray-dark-color);
+    font-size: 17px;
+  }
+  
+  .thread-detail footer {
+    margin-top: 32px;
+    display: flex;
+  }
+  
+  .thread-detail__like {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .thread-detail__like button {
+    background-color: transparent;
+    border: 0;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .comment-list{
+    margin-top: 10px;
+  }
+
+  .comment-vote{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+  }
+  
+  .thread-comment-input {
+    margin-top: 32px;
+  }
+
+  .thread-comment-input input, .thread-comment-input textarea{
+    border-radius: 5px;
+  }
+
+  .input-thread-body{
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    color: var(--on-background);
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    padding: 8px 0;
+    min-height: 200px;
+  }
+
+  .search-bar input {
+    font-family: "Poppins", sans-serif;
+    margin: 16px 0;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .search-bar select {
+    font-family: "Poppins", sans-serif;
+    margin: 16px 0;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 4px;
+    width: 30%;
+  }
+  
+  @media screen and (min-width: 850px) {
+    .login-page, .register-page {
+      grid-template-columns: 1.25fr 1fr;
+    }
+  }
