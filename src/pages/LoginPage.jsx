@@ -19,8 +19,8 @@ function LoginPage() {
       </header>
       <article className="login-page__main">
         <h2>
-          Welcome to
-          <strong> ThreadTree </strong>
+          Welcome 2
+          <strong> Way Huwi </strong>
           !
         </h2>
 
