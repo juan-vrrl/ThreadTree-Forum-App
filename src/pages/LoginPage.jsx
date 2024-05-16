@@ -20,7 +20,7 @@ function LoginPage() {
       <article className="login-page__main">
         <h2>
           Welcome 2
-          <strong> ThreadTree </strong>
+          <strong> Waykambas </strong>
           !
         </h2>
 
