@@ -7,9 +7,9 @@ import ThreadSearch from '../components/ThreadSearch';
 import { asyncPopulateUsersAndThreads } from '../states/shared/action';
 import {
   asyncAddThread,
-  asyncToogleUpvoteThread,
-  asyncToogleDownvoteThread,
-  asyncToogleNeutralvoteThread,
+  asyncToggleUpvoteThread,
+  asyncToggleDownvoteThread,
+  asyncToggleNeutralvoteThread,
 } from '../states/threads/action';
 import ThreadFilter from '../components/ThreadFilter';
 import useInput from '../hooks/useInput';
@@ -46,15 +46,15 @@ function HomePage() {
   };
 
   const onUpVote = (id) => {
-    dispatch(asyncToogleUpvoteThread(id));
+    dispatch(asyncToggleUpvoteThread(id));
   };
 
   const onDownVote = (id) => {
-    dispatch(asyncToogleDownvoteThread(id));
+    dispatch(asyncToggleDownvoteThread(id));
   };
 
   const onNeutralVote = (id) => {
-    dispatch(asyncToogleNeutralvoteThread(id));
+    dispatch(asyncToggleNeutralvoteThread(id));
   };
 
   const threadList = threads.map((thread) => ({

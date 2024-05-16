@@ -19,7 +19,7 @@ function CommentInput({ onComment }) {
     <div className="thread-comment-input">
       <textarea type="text" placeholder="Write comment here ..." value={content} onChange={handleContentChange} />
       <p className="thread-comment-input__char-left">
-        <strong>{content.length}</strong>
+        <strong className="comment-length">{content.length}</strong>
         /500
       </p>
       <button type="submit" onClick={onCommentHandler}>Reply</button>

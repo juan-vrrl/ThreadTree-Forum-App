@@ -70,7 +70,7 @@ function asyncAddThread({ title, body, category }) {
   };
 }
 
-function asyncToogleUpvoteThread(threadId) {
+function asyncToggleUpvoteThread(threadId) {
   return async (dispatch, getState) => {
     dispatch(showLoading());
     const { authUser } = getState();
@@ -86,7 +86,7 @@ function asyncToogleUpvoteThread(threadId) {
   };
 }
 
-function asyncToogleDownvoteThread(threadId) {
+function asyncToggleDownvoteThread(threadId) {
   return async (dispatch, getState) => {
     dispatch(showLoading());
     const { authUser } = getState();
@@ -102,7 +102,7 @@ function asyncToogleDownvoteThread(threadId) {
   };
 }
 
-function asyncToogleNeutralvoteThread(threadId) {
+function asyncToggleNeutralvoteThread(threadId) {
   return async (dispatch, getState) => {
     dispatch(showLoading());
     const { authUser } = getState();
@@ -126,7 +126,7 @@ export {
   toggleDownvoteThreadActionCreator,
   toggleNeutralvoteThreadActionCreator,
   asyncAddThread,
-  asyncToogleUpvoteThread,
-  asyncToogleDownvoteThread,
-  asyncToogleNeutralvoteThread,
+  asyncToggleUpvoteThread,
+  asyncToggleDownvoteThread,
+  asyncToggleNeutralvoteThread,
 };

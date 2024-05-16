@@ -42,7 +42,7 @@ function ThreadInput({ addThread }) {
         onChange={handleBodyChange}
       />
       <p className="thread-input__char-left">
-        <strong>{body.length}</strong>
+        <strong className="body-length">{body.length}</strong>
         /1500
       </p>
 

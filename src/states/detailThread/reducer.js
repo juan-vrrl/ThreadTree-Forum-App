@@ -6,11 +6,6 @@ function detailThreadReducer(detailThread = null, action = {}) {
       return action.payload.detailThread;
     case ActionType.CLEAR_DETAIL_THREAD:
       return null;
-    case ActionType.ADD_COMMENT:
-      return {
-        ...detailThread,
-        comments: [action.payload.comment, ...detailThread.comments],
-      };
     case ActionType.TOGGLE_UPVOTE_DETAIL_THREAD:
       return {
         ...detailThread,
@@ -30,6 +25,11 @@ function detailThreadReducer(detailThread = null, action = {}) {
         downVotesBy: detailThread.downVotesBy.filter(
           (id) => id !== action.payload.userId,
         ),
+      };
+    case ActionType.ADD_COMMENT:
+      return {
+        ...detailThread,
+        comments: [action.payload.comment, ...detailThread.comments],
       };
     case ActionType.TOGGLE_UPVOTE_COMMENT:
       return {
