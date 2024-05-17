@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  BiUpvote, BiDownvote,
+  BiUpvote, BiDownvote, BiCategory, BiComment,
 } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import parser from 'html-react-parser';
@@ -77,8 +77,8 @@ function ThreadItem({
             <p className="item__user-name">{user.name}</p>
             <p className="item__user-id">{user.email}</p>
             <p>
-              Category :
-              {' #'}
+              <BiCategory />
+              {' : #'}
               {category}
             </p>
           </div>
@@ -91,9 +91,12 @@ function ThreadItem({
           <div className="item__text">{parser(truncatedBody)}</div>
         </article>
         <div className="item__votes">
-          Total Comment :
-          {' '}
-          {totalComments}
+          <div>
+            <BiComment />
+            {' : '}
+            {totalComments}
+          </div>
+
           <div>
             <p>
               <button type="button" aria-label="like" onClick={onUpVote}>

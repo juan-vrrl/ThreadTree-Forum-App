@@ -63,8 +63,6 @@ const fakeUsersResponse = [
 
 const fakeErrorResponse = new Error('Ups, something went wrong');
 
-// ... kode fake data
-
 describe('asyncPopulateUsersAndThreads thunk', () => {
   beforeEach(() => {
     api._getAllUsers = api.getAllUsers;

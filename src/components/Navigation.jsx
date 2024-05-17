@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { BsTree } from 'react-icons/bs';
 
 function Navigation({ authUser, signOut }) {
   const {
@@ -9,16 +10,19 @@ function Navigation({ authUser, signOut }) {
 
   return (
     <div className="navigation">
-      <img src={avatar} alt={id} title={name} />
-      <div className="navigation-profile">
-        <h4>{name}</h4>
-        <p>{email}</p>
-      </div>
+      <h1 style={{ display: 'flex' }}>
+        <BsTree />
+      </h1>
       <nav>
         <Link className="navlink" to="/">Home</Link>
         {' | '}
         <Link className="navlink" to="/leaderboards">Leaderboards</Link>
       </nav>
+      <img src={avatar} alt={id} title={name} />
+      <div className="navigation-profile">
+        <h4>{name}</h4>
+        <p>{email}</p>
+      </div>
       <button className="navlink" type="button" onClick={signOut}>Sign out</button>
     </div>
   );

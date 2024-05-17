@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BiUpvote, BiDownvote } from 'react-icons/bi';
+import { BiUpvote, BiDownvote, BiCategory } from 'react-icons/bi';
 import parser from 'html-react-parser';
 import { postedAt } from '../utils';
 import CommentList from './CommentList';
@@ -54,9 +54,9 @@ function ThreadDetail({
         <img src={owner.avatar} alt={owner} />
         <div className="thread-detail__user-info">
           <p className="thread-detail__user-name">{owner.name}</p>
-          <p className="thread-detail__user-id">
-            Category :
-            {' '}
+          <p style={{ display: 'flex', alignItems: 'center' }} className="thread-detail__user-id">
+            <BiCategory />
+            {' : #'}
             {category}
           </p>
         </div>
