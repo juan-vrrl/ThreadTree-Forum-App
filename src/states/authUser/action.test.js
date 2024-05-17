@@ -15,9 +15,6 @@ import { asyncSetAuthUser, setAuthUserActionCreator } from './action';
 
 const fakeAuthUserResponse = {
   id: 'john_doe',
-  name: 'John Doe',
-  email: 'john@example.com',
-  avatar: 'https://generated-image-url.jpg',
 };
 
 const fakeErrorResponse = new Error('Ups, something went wrong');
