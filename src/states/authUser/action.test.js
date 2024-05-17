@@ -53,7 +53,7 @@ describe('asyncSetAuthUser thunk', () => {
     // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
     expect(api.putAccessToken).toHaveBeenCalledWith('fake-token');
-    expect(dispatch).toHaveBeenCalledWith(setAuthUserActionCreator(null));
+    expect(dispatch).toHaveBeenCalledWith(setAuthUserActionCreator(fakeAuthUserResponse));
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });
 
